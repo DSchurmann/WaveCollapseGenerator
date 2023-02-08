@@ -3,9 +3,28 @@
 	<head>
 		<script type="text/javascript" src="js/wavecollapse.js"></script>
 	</head>
-	<body>
-		<input type="button" onclick="generate()" value="Generate" />
+	<body onload="setPageSettings()">
+		<canvas id="canvas" height="400" width="400"></canvas>
 		<br />
-		<canvas id='canvas'></canvas>
+
+		<form onsubmit="generate(); return false">
+			<label for="dimx">Columns</label>
+			<input type="number" name="dimx" id="dimx">
+			<br />
+			<label for="dimy">Rows</label>
+			<input type="number" name="dimy" id="dimy">
+			<br />
+			<label for="width">Canvas Width</label>
+			<input type="number" name="width" id="width">
+			<br />
+			<label for="height">Canvas Height</label>
+			<input type="number" name="height" id="height">
+			<br />
+			<label for="white">White blank spaces</label>
+			<input type="checkbox" name="white" id="white">
+			<br /><br />
+
+			<input type="submit" value="Generate" />
+		</form>
 	</body>
 </html>
